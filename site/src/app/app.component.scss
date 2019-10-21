@@ -1,0 +1,16 @@
+a .fa-link {
+    color: #777;
+}
+
+.bg {
+    /* The image used */
+    background-image: linear-gradient(rgba(77, 0, 0, 0.9), rgba(34, 0, 112, 0.9)),url("https://upload.wikimedia.org/wikipedia/commons/e/e9/2017.01.29_Oppose_Betsy_DeVos_Protest%2C_Washington%2C_DC_USA_00228_%2832469025891%29.jpg");
+  
+    /* Half height */
+    height: 50%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

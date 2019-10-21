@@ -1,0 +1,53 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="container-flex">
+    <div class="jumbotron jumbotron-fluid mb-0 text-light bg">
+        <iframe class="float-right" src="https://ghbtns.com/github-btn.html?user=cpgeier&repo=real-time.ml&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+        <div class="container">
+        <h1 class="display-4">Election social media in realtime</h1>
+        <p class="lead">You've seen TV hosts presenting politics. Take a look at how everyday Americans are talking about the election.</p>
+    </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <p style="text-align: center">All Election Tweets</p>
+            <div style="height: 400px;">
+                <app-tweets-line-chart [marketStatus]="marketStatusToPlot"></app-tweets-line-chart>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <p style="text-align: center">Joe Biden Tweets</p>
+            <div style="height: 400px;">
+                <app-tweets-line-chart-biden [tweetCounts]="bidenTweetCountToPlot"></app-tweets-line-chart-biden>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <p style="text-align: center">Donald Trump Tweets</p>
+            <div style="height: 400px;">
+                <app-tweets-line-chart-trump [tweetCounts]="trumpTweetCountToPlot"></app-tweets-line-chart-trump>
+            </div>
+        </div>
+    </div>
+    <hr class="my-5">
+    <div class="ml-5 mt-3">
+        <app-tweet-embed [tweetStatus]="tweetStatus" [tweetId]="tweetId"></app-tweet-embed>
+    </div>
+
+    <nav class="navbar navbar-light bg-light mt-4">
+        <div class="col-xs-3 ml-auto m-2">
+            <a class="ml-3" href="https://github.com/cpgeier"> 
+                <fa-icon class="fa-link" [icon]="faGithub" size="2x"></fa-icon>
+            </a>
+            <a class="ml-3" href="https://www.linkedin.com/in/chris-geier"> 
+                <fa-icon class="fa-link" [icon]="faLinkedinIn" size="2x"></fa-icon>
+            </a>
+            <a class="ml-3" href="http://cpgeier.ml/"> 
+                <fa-icon class="fa-link" [icon]="faLink" size="2x"></fa-icon>
+            </a>
+        </div>
+    </nav>
+</div>
+<router-outlet></router-outlet>

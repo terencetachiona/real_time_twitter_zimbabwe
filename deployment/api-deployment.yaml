@@ -1,0 +1,64 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.17.0 (a74acad)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: api
+  name: api
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: api
+    spec:
+      containers:
+      - env:
+        - name: ACCESS_TOKEN_KEY
+          valueFrom:
+            configMapKeyRef:
+              key: ACCESS_TOKEN_KEY
+              name: api-stream-env-list
+        - name: ACCESS_TOKEN_SECRET
+          valueFrom:
+            configMapKeyRef:
+              key: ACCESS_TOKEN_SECRET
+              name: api-stream-env-list
+        - name: CONSUMER_KEY
+          valueFrom:
+            configMapKeyRef:
+              key: CONSUMER_KEY
+              name: api-stream-env-list
+        - name: CONSUMER_SECRET
+          valueFrom:
+            configMapKeyRef:
+              key: CONSUMER_SECRET
+              name: api-stream-env-list
+        - name: ES_INDEX
+          valueFrom:
+            configMapKeyRef:
+              key: ES_INDEX
+              name: api-stream-env-list
+        - name: ES_MAX_SIZE
+          valueFrom:
+            configMapKeyRef:
+              key: ES_MAX_SIZE
+              name: api-stream-env-list
+        - name: ES_URI
+          valueFrom:
+            configMapKeyRef:
+              key: ES_URI
+              name: api-stream-env-list
+        image: cpgeier/api
+        imagePullPolicy: Always
+        name: api
+        ports:
+        - containerPort: 3000
+        resources: {}
+      restartPolicy: Always
+status: {}
